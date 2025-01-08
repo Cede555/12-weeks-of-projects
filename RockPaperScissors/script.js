@@ -2,7 +2,23 @@
 
 function getComputerChoice(max) 
 {
-  return Math.floor(Math.random() * max);
+  let choice = Math.floor(Math.random() * max);
+  
+
+  switch(choice)
+  {
+    case 0:
+      alert("Computer chose Rock!");
+      break;
+    case 1:
+      alert("Computer chose Paper!");
+      break;
+    case 2:
+      alert("Computer chose Scissors!")
+      break;
+  }
+  
+  return choice;
 }
 
 function getUserChoice()
@@ -31,8 +47,9 @@ function playRound()
 {
   // Verify function entry
   console.log("Round Started");
-  let computerChoice = getComputerChoice(3);
+
   let playerChoice = getUserChoice();
+  let computerChoice = getComputerChoice(3);
 
   if(playerChoice === computerChoice)
   {
@@ -67,6 +84,11 @@ function playRound()
   else if(playerChoice === 2 && computerChoice === 0)
   {
     console.log("1 point to Computer");
+    return 2;
+  }
+  else
+  {
+    alert("Point to Computer for no valid entry");
     return 2;
   }
 
